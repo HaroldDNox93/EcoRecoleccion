@@ -1,0 +1,61 @@
+:root{
+  --line:#e6ecea;
+  --text:#12312a;
+  --muted:#6c8a81;
+  --green:#2f8f6e;
+  --green-600:#277e60;
+  --danger:#b23b3b;
+}
+
+/* El Layout centra .main; aquí acotamos ancho de la tarjeta interna */
+.account{
+  width: min(520px, 94%);
+  background:#fff;
+  border:1px solid #f1f3f2;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  overflow:hidden;
+}
+
+/* Header mini interno */
+.account-header{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  background:#fbfdfc;
+}
+.brand-mini{ font-weight:800; color:var(--green-600); letter-spacing:.2px; }
+
+/* Hero */
+.account-hero{
+  padding:18px 16px 8px;
+  display:grid; justify-items:center; gap:10px;
+  background: radial-gradient(500px 120px at 50% -40px, rgba(47,143,110,.08), transparent 60%), linear-gradient(180deg,#ffffff,#fcfefd);
+  border-bottom:1px solid var(--line);
+}
+.account-title{ margin:6px 0 2px; font-size:28px; font-weight:800; color:#265e50; }
+.avatar{
+  width:64px; height:64px; border-radius:999px;
+  background:#e7f3ef; color:var(--green-600);
+  display:grid; place-items:center; font-weight:800; letter-spacing:.4px;
+}
+.user-data{text-align:center;}
+.user-name{ font-weight:800; color:#1d3b34; }
+.user-email{ font-size:13px; color:var(--muted); }
+
+/* Lista de acciones */
+.account-list{ display:grid; }
+.item{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; padding:14px 14px;
+  border-bottom:1px solid var(--line);
+  text-decoration:none; background:#fff; color:var(--text);
+}
+.item:last-child{ border-bottom:0; border-top:1px solid #f2f4f3; }
+.item:hover{ background:#f9fbfa; }
+.item i svg{ display:block; }
+.item .left{ display:flex; align-items:center; gap:10px; }
+.item .chev{ color:#8aa39b; }
+.item.danger{ color:var(--danger); cursor:pointer; border:none; text-align:left; width:100%; background:#fff; }
+
+/* Accesibilidad */
+.item:focus-visible{ outline:3px solid rgba(47,143,110,.22); outline-offset:-3px; }

@@ -1,0 +1,107 @@
+:root{
+  --line:#e6ecea;
+  --text:#12312a;
+  --muted:#6c8a81;
+  --green:#2f8f6e;
+  --green-600:#277e60;
+  --pending:#e9b15a;
+  --pending-ink:#805a1b;
+  --ok:#bfe7cf;
+  --ok-ink:#1f5f4b;
+}
+
+/* el Layout ya centra .main; aquí limitamos ancho de contenido */
+.reports{
+  width: min(680px, 96%);
+  display: grid;
+  gap: 14px;
+}
+
+.reports-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+  background:
+    radial-gradient(500px 120px at 50% -60px, rgba(47,143,110,.08), transparent 60%);
+  border-radius: 10px 10px 0 0;
+}
+
+.reports-title{
+  margin: 6px 0 10px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #265e50;
+}
+
+/* Lista y tarjetas */
+.reports-list{
+  display: grid;
+  gap: 10px;
+}
+
+.report-card{
+  background: #ffffff;
+  border: 1px solid #f1f3f2;
+  border-radius: 10px;
+  padding: 12px 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
+
+.report-card + .report-card{ margin-top: 2px; }
+
+.report-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.report-date{
+  color: #24433b;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.report-address{
+  color: #304c44;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.report-desc{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Badges de estado */
+.badge{
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge--pending{
+  background: #fff3e0;
+  color: var(--pending-ink);
+  border: 1px solid #f4d4a3;
+}
+
+.badge--resolved{
+  background: var(--ok);
+  color: var(--ok-ink);
+  border: 1px solid #9dd8b9;
+}
+
+/* Accesibilidad focus */
+.report-card:focus-visible{
+  outline: 3px solid rgba(47,143,110,.22);
+  outline-offset: 2px;
+}

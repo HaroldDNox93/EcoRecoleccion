@@ -1,0 +1,7 @@
+.hero{ text-align:center; display:flex; flex-direction:column; gap:14px; align-items:center; }
+.hero-title{ color:#0f3b31; font-size:clamp(28px,5vw,48px); font-weight:800; line-height:1.2; margin:0; }
+.btn-primary{ display:inline-flex; align-items:center; justify-content:center; height:46px; min-width:260px; padding:0 18px; border:0; border-radius:10px; background:#2f8f6e; color:#fff; font-weight:700; box-shadow:0 2px 0 rgba(0,0,0,.06), 0 6px 14px rgba(47,143,110,.18); }
+.btn-primary:hover{ background:#277e60; }
+.quick-actions{ margin-top:6px; display:flex; align-items:center; gap:14px; color:#2b4a43; }
+.quick-link{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:#2b4a43; font-weight:500; }
+.dot{ color:#9ab3ad; }

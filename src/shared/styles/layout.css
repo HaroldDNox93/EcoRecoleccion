@@ -1,0 +1,19 @@
+:root{ --bg:#f4f7f6; --line:#e6ecea; --text:#143b33; --green:#2f8f6e; --green-600:#277e60; }
+html,body,#root{height:100%;margin:0;}
+.home-page{ min-height:100vh; display:grid; place-items:center;
+  background: radial-gradient(1200px 420px at 50% -10%, rgba(47,143,110,.10), transparent 60%), linear-gradient(180deg,#eef5f3,#f7faf9); }
+.shell{ width:min(1100px,92vw); min-height:min(780px,88vh); background:#fff; color:var(--text);
+  border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,.12); padding:24px; display:flex; flex-direction:column; }
+.nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.brand{ display:flex; align-items:center; gap:10px; color:var(--green-600); font-weight:800; text-decoration:none; }
+.logo{ width:36px;height:36px;display:grid;place-items:center;background:#e7f3ef;color:var(--green-600);border-radius:999px; }
+.menu{ list-style:none; display:flex; gap:22px; margin:0; padding:0; }
+.menu a{ color:#2b4a43; text-decoration:none; font-weight:600; }
+.menu a.active,.menu a:hover{ color:var(--green-600); }
+.main{ flex:1; display:flex; align-items:center; justify-content:center; } /* ← centra el contenido */
+.footer{ border-top:1px solid var(--line); padding-top:14px; margin-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:14px; }
+.links{ display:flex; gap:18px; flex-wrap:wrap; }
+.links a{ color:#40675e; text-decoration:none; }
+.links a:hover{ color:var(--green-600); }
+.social{ display:flex; gap:10px; }
+.social a{ display:grid; place-items:center; width:32px; height:32px; border-radius:999px; background:#eaf3f0; color:#1c3c34; text-decoration:none; font-weight:700; }
