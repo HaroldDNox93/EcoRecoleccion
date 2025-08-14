@@ -20,20 +20,49 @@ export default function RegisterPage() {
     email: "",
     password: "",
     confirm: "",
+    telefono: "",
+    direccion: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // TODO: validar y llamar a tu API real
     if (form.password !== form.confirm) {
       alert("Las contraseñas no coinciden");
       return;
     }
-    alert("Registro enviado ✔️");
-    nav("/login");
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:4000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          nombre: form.name,
+          email: form.email,
+          password: form.password,
+          celphone: form.telefono,
+          adrees: form.direccion
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Registro exitoso ✔️");
+        nav("/login");
+      } else {
+        alert(data.error || "Error al registrar usuario");
+      }
+    } catch (err) {
+      alert("Error de red o del servidor");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -78,6 +107,32 @@ export default function RegisterPage() {
             </label>
 
             <label className="group">
+              <span className="label">Teléfono</span>
+              <input
+                name="telefono"
+                type="tel"
+                placeholder="Teléfono"
+                autoComplete="tel"
+                value={form.telefono}
+                onChange={onChange}
+                required
+              />
+            </label>
+
+            <label className="group">
+              <span className="label">Dirección</span>
+              <input
+                name="direccion"
+                type="text"
+                placeholder="Dirección"
+                autoComplete="street-address"
+                value={form.direccion}
+                onChange={onChange}
+                required
+              />
+            </label>
+
+            <label className="group">
               <span className="label">Contraseña</span>
               <input
                 name="password"
@@ -105,8 +160,8 @@ export default function RegisterPage() {
               />
             </label>
 
-            <button className="btn-primary" type="submit">
-              Registrarse
+            <button className="btn-primary" type="submit" disabled={loading}>
+              {loading ? "Registrando..." : "Registrarse"}
             </button>
           </form>
 

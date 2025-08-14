@@ -29,15 +29,27 @@ export default function LoginPage() {
     try {
       setLoading(true);
 
-      // TODO: Reemplazar por tu API real:
-      // const res = await axios.post('/api/auth/login', { email, password: pwd });
-      // const token = res.data.token;
-      // Simulación:
-      await new Promise((r) => setTimeout(r, 500));
-      const token = "fake-token-" + Math.random().toString(36).slice(2);
+      // Llamado real al endpoint de login
+      const res = await fetch("http://localhost:4000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          password: pwd
+        })
+      });
 
-      localStorage.setItem("auth:token", token); // <— guarda el token
-      nav("/", { replace: true });               // <— redirige al Home
+      const data = await res.json();
+
+      if (res.ok && data.token) {
+        localStorage.setItem("auth:token", data.token); // guarda el token real
+        localStorage.setItem("auth:user", data.user); 
+        nav("/", { replace: true }); // redirige al Home
+      } else {
+        setErr(data.error || "Credenciales inválidas o error de servidor.");
+      }
     } catch (e) {
       setErr("Credenciales inválidas o error de servidor.");
     } finally {
