@@ -83,7 +83,7 @@ export default function RequestPage() {
           setTipo(null);
         } else {
           console.error("Error en la solicitud:", data);
-          alert("Error al enviar la solicitud");
+          alert(data.error ?? "Error al enviar la solicitud");
         }
       }
 
