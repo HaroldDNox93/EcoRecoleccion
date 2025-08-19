@@ -16,6 +16,8 @@ import RequestPage from "../../features/Request/pages/RequestPage";
 import ReportesPage from "../../features/Reports/pages/ReportsPage";
 import MyInfoPage from "../../features/MyInfo/pages/MyInfoPage";
 import MyPassword from "../../features/MyPassword/pages/MyPassword";
+import EstadisticasPage from "../../features/Estadisticas/pages/EstadisticasPage";
+import CentrosAcopioPage from "../../features/CentrosAcopio/pages/CentrosAcopioPage";
 
 export const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
@@ -38,7 +40,9 @@ export const router = createBrowserRouter([
       { path: "reports", element: <ReportesPage /> },
       { path: "account", element: <AccountPage /> },
       { path: "account/data", element: <MyInfoPage /> },
-      { path: "account/password", element: <MyPassword /> }
+      { path: "account/password", element: <MyPassword /> },
+      { path: "estadisticas", element: <EstadisticasPage /> },
+      { path: "centrosacopio", element: <CentrosAcopioPage /> }
     ],
   },
 

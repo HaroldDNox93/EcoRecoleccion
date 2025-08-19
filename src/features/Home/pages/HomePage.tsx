@@ -14,7 +14,7 @@ export default function HomePage() {
       <Link to="/request" className="btn-primary">Solicitar Recolección</Link>
 
       <div className="quick-actions">
-        <Link to="/centros" className="quick-link"><SearchIcon/> <span>Buscar centros de acopio</span></Link>
+        <Link to="/centrosacopio" className="quick-link"><SearchIcon/> <span>Buscar centros de acopio</span></Link>
         <span className="dot">•</span>
         <Link to="/estadisticas" className="quick-link"><StatsIcon/> <span>Ver mis estadísticas</span></Link>
       </div>
