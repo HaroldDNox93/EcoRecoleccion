@@ -14,6 +14,8 @@ import AccountPage from "../../features/Account/pages/AccountPage";
 import RequestPage from "../../features/Request/pages/RequestPage";
 //import PuntosPage from "../../features/Puntos/pages/PuntosPage";
 import ReportesPage from "../../features/Reports/pages/ReportsPage";
+import MyInfoPage from "../../features/MyInfo/pages/MyInfoPage";
+import MyPassword from "../../features/MyPassword/pages/MyPassword";
 
 export const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
@@ -35,6 +37,8 @@ export const router = createBrowserRouter([
       //{ path: "puntos", element: <PuntosPage /> },
       { path: "reports", element: <ReportesPage /> },
       { path: "account", element: <AccountPage /> },
+      { path: "account/data", element: <MyInfoPage /> },
+      { path: "account/password", element: <MyPassword /> }
     ],
   },
 

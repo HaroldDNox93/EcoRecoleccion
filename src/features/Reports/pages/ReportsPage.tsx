@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/ReportsPage.css";
 
-type ReportStatus = "pending" | "resolved";
+type ReportStatus = "PROGRAMADA" | "resolved";
 
 type Report = {
   IdSolicitud: string;
@@ -14,8 +14,8 @@ type Report = {
 
 function StatusBadge({ status }: { status: ReportStatus }) {
   return (
-    <span className={`badge ${status === "pending" ? "badge--pending" : "badge--resolved"}`}>
-      {status === "pending" ? "Pendiente" : "Resuelto"}
+    <span className={`badge ${status === "PROGRAMADA" ? "badge--pending" : "badge--resolved"}`}>
+      {status === "PROGRAMADA" ? "Programada" : "Resuelto"}
     </span>
   );
 }
