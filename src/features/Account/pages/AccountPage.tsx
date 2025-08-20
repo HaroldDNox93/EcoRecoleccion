@@ -63,15 +63,16 @@ function IconLogout() {
 
 /* ====== Página ====== */
 export default function AccountPage() {
+  
   const navigate = useNavigate();
 
   const logout = useCallback(() => {
-    localStorage.removeItem("auth:token");     // borra token
+    localStorage.clear();     // borra token
     navigate("/login", { replace: true });     // redirige y evita volver con "atrás"
   }, [navigate]);
 
   // TODO: reemplazar por datos reales (store/API)
-  const user = { name: "Marta Pérez", email: "marta@email.com" };
+  const user = JSON.parse(String(localStorage.getItem("auth:user")));
 
   return (
     <div className="account">
@@ -79,16 +80,16 @@ export default function AccountPage() {
         <h1 className="account-title">Mi Cuenta</h1>
         <div className="avatar">
           <span>
-            {user.name
+            {user.nombre
               .split(" ")
-              .map((p) => p[0])
+              .map((p:any) => p[0])
               .slice(0, 2)
               .join("")
               .toUpperCase()}
           </span>
         </div>
         <div className="user-data">
-          <div className="user-name">{user.name}</div>
+          <div className="user-name">{user.nombre}</div>
           <div className="user-email">{user.email}</div>
         </div>
       </div>
@@ -131,7 +132,7 @@ export default function AccountPage() {
           </i>
         </Link>
 
-        <Link to="/recolecciones" className="item">
+        <Link to="/reports" className="item">
           <span className="left">
             <i>
               <IconHistory />

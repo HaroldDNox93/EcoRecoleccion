@@ -45,7 +45,7 @@ export default function LoginPage() {
 
       if (res.ok && data.token) {
         localStorage.setItem("auth:token", data.token); // guarda el token real
-        localStorage.setItem("auth:user", data.user); 
+        localStorage.setItem("auth:user", JSON.stringify(data.user)); 
         nav("/", { replace: true }); // redirige al Home
       } else {
         setErr(data.error || "Credenciales inválidas o error de servidor.");

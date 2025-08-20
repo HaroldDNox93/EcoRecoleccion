@@ -1,0 +1,41 @@
+.residuo-table {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+  padding: 16px 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.table-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--text);
+}
+
+th {
+  font-weight: 700;
+  background: #f8fbfa;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}

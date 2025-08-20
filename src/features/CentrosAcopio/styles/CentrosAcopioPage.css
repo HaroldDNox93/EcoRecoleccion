@@ -1,0 +1,41 @@
+.centros-page {
+  width: min( 100%);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+  padding: 16px 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.centros-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.centros-table th, .centros-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.centros-table th {
+  font-weight: 700;
+  background: #f8fbfa;
+}
+
+.centros-table tr:last-child td {
+  border-bottom: 0;
+}
